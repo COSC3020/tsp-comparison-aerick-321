@@ -14,8 +14,8 @@ function time(){
     let lstime = Date.now()- startls;
 
     console.log("Matrix size " + size + ":");
-	console.log("Held Karp: " + hktime + " | Distance: " + ansHk);
-	console.log("Local Search: " + lstime + " | Distance: " + ansLs);
+    console.log("Held Karp: " + hktime + " | Distance: " + ansHk);
+    console.log("Local Search: " + lstime + " | Distance: " + ansLs);
 }
 
 //create matrices
@@ -24,19 +24,19 @@ function creatematrix(nodeNum){
 	for (let i=0; i < nodeNum; i++){
 		matrix[i] = [];
         for (let j=0; j < nodeNum; j++){
-			if ( j == i){
-				matrix[i][j]=0;
+		if ( j == i){
+			matrix[i][j]=0;
 			}
-			else if (j+1==i)
+		else if (j+1==i)
+			matrix[i][j]=1;
+		else{
+                	matrix[i][j]= Math.floor(Math.random() * nodeNum);
+			if (matrix[i][j] <= 0){
 				matrix[i][j]=1;
-			else{
-                matrix[i][j]= Math.floor(Math.random() * nodeNum);
-				if (matrix[i][j] <= 0){
-					matrix[i][j]=1;
 				}
 			}
-        }
-    }
+        	}
+    	}
 	return matrix;
 }
 
@@ -62,7 +62,6 @@ function tsp_hk(distance_matrix) {
         // Replaces current min with new min
         if (currentMin < bestMin) { bestMin = currentMin; }
     }
-    
     return bestMin;
 }
 
@@ -73,7 +72,6 @@ function heldKarp(city, cities, matrix, cache) {
 
     // Check if it exists already in cache
     let key = JSON.stringify([city, cities]);
-    console.log("cities: " + cities);
     if (cache[key] != undefined) { return cache[key]; }
     
 
