@@ -14,8 +14,8 @@ function time(){
     let lstime = Date.now()- startls;
 
     console.log("Matrix size " + size + ":");
-    console.log("Held Karp: " + hktime + " | Distance: " + ansHk);
-    console.log("Local Search: " + lstime + " | Distance: " + ansLs);
+    console.log("Held Karp time: " + hktime + " Distance: " + ansHk);
+    console.log("Local Search time: " + lstime + " Distance: " + ansLs);
 }
 
 //create matrices
