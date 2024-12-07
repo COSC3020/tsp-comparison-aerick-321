@@ -1,3 +1,17 @@
+//timer function
+function time(){
+    let starthk = Date.now();
+    let ansHk = tsp_hk(graph);
+    let hktime = Date.now()- starthk;
+    let startls = Date.now();
+    let ansLs = tsp_ls(graph);
+    let lstime = Date.now()- startls;
+}
+
+//create matrices
+
+
+
 function tsp_hk(distance_matrix) {
     // Sizes of 0 or 1 have no distance
     let size = distance_matrix.length;
