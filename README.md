@@ -22,3 +22,6 @@ Local Search found. Why is this?
 
 Add the code to run your experiments, graphs, and an explanation of what you did
 to this markdown file.
+
+
+Used my TSP Local search and the TSP Held Karp from https://github.com/COSC3020/tsp-held-karp-DJReflexive/blob/main/code.js. “I certify that I have listed all sources used to complete this exercise, including the use of any Large Language Models. All of the work is my own, except where stated otherwise. I am aware that plagiarism carries severe penalties and that if plagiarism is suspected, charges may be filed against me without prior notice.”
