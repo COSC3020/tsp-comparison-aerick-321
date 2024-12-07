@@ -1,15 +1,44 @@
 //timer function
+time();
 function time(){
+    let size = 1;
+    let graph = [];
+    graph = creatematrix(size);
+
     let starthk = Date.now();
     let ansHk = tsp_hk(graph);
     let hktime = Date.now()- starthk;
+
     let startls = Date.now();
     let ansLs = tsp_ls(graph);
     let lstime = Date.now()- startls;
+
+    console.log("Matrix size " + size + ":");
+	console.log("Held Karp: " + hktime + " | Distance: " + ansHk);
+	console.log("Local Search: " + lstime + " | Distance: " + ansLs);
 }
 
 //create matrices
-
+function creatematrix(nodeNum){
+	let matrix=[];
+	for (let i=0; i < nodeNum; i++){
+		matrix[i] = [];
+        for (let j=0; j < nodeNum; j++){
+			if ( j == i){
+				matrix[i][j]=0;
+			}
+			else if (j+1==i)
+				matrix[i][j]=1;
+			else{
+                matrix[i][j]= Math.floor(Math.random() * nodeNum);
+				if (matrix[i][j] <= 0){
+					matrix[i][j]=1;
+				}
+			}
+        }
+    }
+	return matrix;
+}
 
 
 function tsp_hk(distance_matrix) {
