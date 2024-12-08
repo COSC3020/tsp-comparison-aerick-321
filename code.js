@@ -1,7 +1,7 @@
 //timer function
 time();
 function time(){
-    let size = 1;
+    let size = 20;
     let graph = [];
     graph = creatematrix(size);
 
